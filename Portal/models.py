@@ -18,14 +18,3 @@ class Articles(models.Model):
     def __unicode__(self):
         return '%s' % (self.catname)
 
-
-    def toJSON(self):
-        import json
-        return json.dumps(dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]]))
-
-
-
-
-# class Author(models.Model):
-#     articles = models.ForeignKey(User)
-#     author = models.IntegerField(max_length=100, null=True, help_text='u作者')
